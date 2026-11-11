@@ -25,10 +25,10 @@
 ## UI/UX Wireframes
 
 Explore the early design concepts and screen flows on Figma:  
-👉 [Simmer Figma Wireframes](https://www.figma.com/design/j8o6qDjGQoYO08BXNyOVjv/Untitled?node-id=0-1&m=dev&t=2d4HF76FdQTYKg5u-1)
+[Simmer Figma Wireframes](https://www.figma.com/design/j8o6qDjGQoYO08BXNyOVjv/Untitled?node-id=0-1&m=dev&t=2d4HF76FdQTYKg5u-1)
 
 ---
 
-## 🗄 Database Architecture
+## Database Architecture
 
 ![Diagrama Bazei de Date](docs/db_diagram.png)
