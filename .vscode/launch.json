@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SimmerBackendApplication<simmer-backend>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.simmer.simmer_backend.SimmerBackendApplication",
+      "projectName": "simmer-backend",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
