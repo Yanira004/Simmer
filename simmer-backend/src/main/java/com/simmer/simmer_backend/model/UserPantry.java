@@ -2,8 +2,7 @@ package com.simmer.simmer_backend.model;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "user_pantries")
@@ -20,7 +19,7 @@ public class UserPantry {
     private String unit;
 
     @Column
-    private Date expirationDate;
+    private LocalDate expirationDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -63,11 +62,11 @@ public class UserPantry {
         this.unit = unit;
     }
 
-    public Date getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
     }
 
