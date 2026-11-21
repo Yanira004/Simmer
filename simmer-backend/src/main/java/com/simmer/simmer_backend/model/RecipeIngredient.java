@@ -21,13 +21,14 @@ public class RecipeIngredient {
     @Column(nullable = false)
     private Float quantity;
 
-    @Column(nullable = false)
-    private String unit;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "unit_id", nullable = false)
+    private Unit unit;
 
     public RecipeIngredient() {
     }
 
-    public RecipeIngredient(Float quantity, String unit) {
+    public RecipeIngredient(Float quantity, Unit unit) {
         this.quantity = quantity;
         this.unit = unit;
     }
@@ -65,11 +66,11 @@ public class RecipeIngredient {
         this.quantity = quantity;
     }
 
-    public String getUnit() {
+    public Unit getUnit() {
         return unit;
     }
 
-    public void setUnit(String unit) {
+    public void setUnit(Unit unit) {
         this.unit = unit;
     }
 }

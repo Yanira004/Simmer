@@ -25,6 +25,10 @@ public class Ingredient {
     @Column
     private Float fat;
 
+    @ManyToMany
+    @JoinTable(name = "ingredient_allergens", joinColumns = @JoinColumn(name = "ingredient_id"), inverseJoinColumns = @JoinColumn(name = "allergen_id"))
+    private java.util.Set<Allergen> allergens = new java.util.HashSet<>();
+
     public Ingredient() {
     }
 
@@ -81,6 +85,14 @@ public class Ingredient {
 
     public void setFat(Float fat) {
         this.fat = fat;
+    }
+
+    public java.util.Set<Allergen> getAllergens() {
+        return allergens;
+    }
+
+    public void setAllergens(java.util.Set<Allergen> allergens) {
+        this.allergens = allergens;
     }
 
 }
