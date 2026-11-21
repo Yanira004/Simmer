@@ -29,18 +29,6 @@ public class Recipe {
     @JoinColumn(name = "author_id")
     private User author;
 
-    @ManyToMany
-    @JoinTable(name = "recipe_allergens", joinColumns = @JoinColumn(name = "recipe_id"), inverseJoinColumns = @JoinColumn(name = "allergen_id"))
-    private java.util.Set<Allergen> allergens = new java.util.HashSet<>();
-
-    public java.util.Set<Allergen> getAllergens() {
-        return allergens;
-    }
-
-    public void setAllergens(java.util.Set<Allergen> allergens) {
-        this.allergens = allergens;
-    }
-
     public Recipe() {
     }
 

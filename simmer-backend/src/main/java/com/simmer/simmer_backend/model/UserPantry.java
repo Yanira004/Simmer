@@ -15,11 +15,12 @@ public class UserPantry {
     @Column(nullable = false)
     private Float quantity;
 
-    @Column(nullable = false)
-    private String unit;
-
     @Column
     private LocalDate expirationDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "unit_id", nullable = false)
+    private Unit unit;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -32,7 +33,7 @@ public class UserPantry {
     public UserPantry() {
     }
 
-    public UserPantry(Float quantity, String unit, LocalDate expirationDate) {
+    public UserPantry(Float quantity, Unit unit, LocalDate expirationDate) {
         this.quantity = quantity;
         this.unit = unit;
         this.expirationDate = expirationDate;
@@ -54,11 +55,11 @@ public class UserPantry {
         this.quantity = quantity;
     }
 
-    public String getUnit() {
+    public Unit getUnit() {
         return unit;
     }
 
-    public void setUnit(String unit) {
+    public void setUnit(Unit unit) {
         this.unit = unit;
     }
 

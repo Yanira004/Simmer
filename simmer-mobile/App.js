@@ -5,7 +5,6 @@ export default function App() {
   const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
-    // Aici facem fetch către backend-ul tău de Spring Boot
     fetch('http://192.168.1.130:8080/api/ingredients')
       .then(response => response.json())
       .then(data => setIngredients(data))
@@ -22,7 +21,7 @@ export default function App() {
         renderItem={({ item }) => (
           <View style={styles.itemBox}>
             <Text style={styles.itemName}>{item.name}</Text>
-            <Text style={styles.itemCalories}>Calorii: {item.calories} kcal</Text>
+            <Text style={styles.itemCalories}>{item.calories} kcal/100g</Text>
           </View>
         )}
       />
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 20,
-    paddingTop: 60, // Protejează conținutul să nu intre sub status bar-ul telefonului
+    paddingTop: 60, 
   },
   title: {
     fontSize: 24,
